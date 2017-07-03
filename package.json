@@ -1,0 +1,24 @@
+{
+  "name": "sakura-webpack-plugin",
+  "version": "0.0.1",
+  "description": "a webpack plugin to sumary resources into a file, the file is to be used by sakura-cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guoshencheng/sakura-webpack-plugin.git"
+  },
+  "keywords": [
+    "sakura-cli",
+    "webpack",
+    "resources"
+  ],
+  "author": "century guo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guoshencheng/sakura-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/guoshencheng/sakura-webpack-plugin#readme"
+}
