@@ -1,6 +1,6 @@
 {
   "name": "sakura-webpack-plugin",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "a webpack plugin to sumary resources into a file, the file is to be used by sakura-cli",
   "main": "index.js",
   "scripts": {
