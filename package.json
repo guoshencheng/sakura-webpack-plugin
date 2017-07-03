@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/guoshencheng/sakura-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/guoshencheng/sakura-webpack-plugin#readme"
+  "homepage": "https://github.com/guoshencheng/sakura-webpack-plugin#readme",
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  }
 }
