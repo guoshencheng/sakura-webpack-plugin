@@ -9,6 +9,7 @@ module.exports = function(opt) {
   return function() {
     this.plugin('done', function(stats) {
       var namedChunks = stats.compilation.namedChunks;
+      var hash = stats.hash;
       var resources = Object.keys(namedChunks).reduce((pre, key) => {
         var chunk = namedChunks[key];
         const styles = chunk.files.filter(item => /\.css$/.test(item)).map(item => prefix + item);
@@ -19,7 +20,7 @@ module.exports = function(opt) {
         return Object.assign(pre, {
           [key]: resource
         })
-      }, {})
+      }, { hash })
       mkdirp(filePath, (err) => {
         if (err) {
           console.log(err);
