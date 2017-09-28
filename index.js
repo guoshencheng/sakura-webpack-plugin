@@ -4,9 +4,11 @@ var cwd = process.cwd();
 var mkdirp = require('mkdirp');
 
 module.exports = function(opt) {
+  opt = opt || {};
   const prefix = (opt && opt.prefix) || "";
   const filePath = (opt && opt.filePath) || cwd;
   const single = opt && !!opt.single;
+  const resourceFileName = opt.resourceFileName || "sakura.resources.json";
   return function() {
     this.plugin('done', function(stats) {
       var namedChunks = stats.compilation.namedChunks;
@@ -38,7 +40,7 @@ module.exports = function(opt) {
         if (err) {
           console.log(err);
         } else {
-          fs.writeFileSync(path.resolve(filePath, "./sakura.resources.json"), JSON.stringify(resources, null, "  "));
+          fs.writeFileSync(path.resolve(filePath, `./${resourceFileName}`), JSON.stringify(resources, null, "  "));
         }
       })
     })
