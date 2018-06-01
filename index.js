@@ -15,8 +15,10 @@ module.exports = function(opt) {
       var hash = stats.hash;
       var resources 
       if (single) {
-        resources = Object.keys(namedChunks).reduce((pre, key) => {
-          var chunk = namedChunks[key];
+        const isMap = Object.prototype.toString.call(namedChunks) === '[object Map]';
+        const keys = isMap ? Array.from(namedChunks.keys()) : Object.keys(namedChunks);
+        resources = keys.reduce((pre, key) => {
+          var chunk = isMap ? namedChunks.get(key) : namedChunks[key];
           const styles = chunk.files.filter(item => /\.css$/.test(item)).map(item => prefix + item);
           const javascripts = chunk.files.filter(item => /\.js$/.test(item)).map(item => prefix + item);
           pre.styles = pre.styles.concat(styles);
@@ -46,4 +48,3 @@ module.exports = function(opt) {
     })
   }
 }
-
